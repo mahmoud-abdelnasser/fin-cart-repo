@@ -43,7 +43,7 @@ const CourierList: React.FC = () => {
       cheapestID: lowestId,
       fastestID: fastestCourierId,
     }
-  }, [couriorList])
+  }, [])
 
   const renderContent = () => {
     if (showOnlyEgyptCode) {
