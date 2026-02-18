@@ -1,46 +1,200 @@
-# Getting Started with Create React App
+# 🚚 Quick Quote Shipping Calculator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A production-ready **React + TypeScript + Material UI** implementation of an interactive shipping calculator designed for merchants who need fast, reliable courier comparisons.
 
-## Available Scripts
+This project demonstrates advanced frontend architecture, form orchestration, state management, performance optimization, and responsive UI design.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🌐 Live Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+🔗 Demo URL: https://teal-cendol-caca6c.netlify.app/
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## 🧠 Project Objective
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Merchants must quickly decide which courier to use for a shipment.  
+This application simplifies complex rate data into a clean, actionable interface that highlights:
 
-### `npm run build`
+- Cheapest option
+- Fastest option
+- Tax breakdown
+- Delivery timeline
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The focus of this implementation is not just UI — but architecture, scalability, and professional frontend engineering practices.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# 🏗️ Architecture Overview
 
-### `npm run eject`
+### Core Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- React 18
+- TypeScript
+- Material UI (MUI v5)
+- React Hook Form
+- Yup (Schema Validation)
+- Context API
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# 📦 Features
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 1️⃣ Advanced Multi-Step Form
 
-## Learn More
+A three-stage stepper flow:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Origin Details
+2. Destination Details
+3. Package Dimensions (Weight / Volume)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Validation Rules
+
+- Weight must be greater than 0
+- International shipping only enabled when valid ISO country codes are selected
+- Real-time validation feedback
+- Schema-based validation using Yup
+
+### Performance Strategy
+
+- React Hook Form minimizes re-renders
+- Controlled components only where required
+- `useMemo` used for optimization
+- Context values are memoized
+
+---
+
+## 2️⃣ Courier Card Component
+
+Highly modular and reusable component.
+
+### Displays:
+
+- Courier Logo
+- Courier Name
+- Base Price
+- Tax
+- Total Price
+- Estimated Delivery Time
+
+### Dynamic Highlighting:
+
+- "Cheapest" badge
+- "Fastest" badge
+
+Calculated programmatically from result set.
+
+---
+
+## 3️⃣ Centralized State Management
+
+### QuoteContext
+
+Prevents prop drilling and centralizes:
+
+- Shipment data
+- Selected courier
+- Rate results
+- Loading state
+- Error state
+
+---
+
+## 4️⃣ Asynchronous State Handling
+
+Three polished states:
+
+### 🔹 Initial / Empty State
+
+Before search is triggered.
+
+### 🔹 Searching State
+
+Skeleton loaders displayed while simulating API request.
+
+### 🔹 Results State
+
+Courier cards rendered in responsive grid.
+
+### 🔹 No Results State
+
+Clear empty message when route not supported.
+
+---
+
+## 📱 Responsive Layout
+
+Mobile-first approach:
+
+- Small screens → Vertical stacking
+- Medium & up → Multi-column comparison grid
+
+Built using:
+
+- MUI Grid
+- MUI Box
+- Flex utilities
+
+---
+
+# 🎨 Design System & Theming
+
+- Centralized MUI theme
+- Consistent spacing system
+- Reusable color tokens
+- `sx` utilities
+- Accessible contrast ratios
+
+Brand consistency maintained across all components.
+
+---
+
+# 📂 Project Structure
+
+src/
+├── components/
+│ ├── CourierCard/
+│ ├── ShippmentDetails/
+│
+├── context/
+│ └── QuoteContext.tsx
+│
+├── hooks/
+│
+├── utils/
+│ ├── helper.ts
+│ └── validation.ts
+│
+├── constants/
+│ └── countries.ts
+│ └── courios.ts
+│
+├── pages/
+│ └── Home.tsx
+│
+├── App.tsx
+└── index.tsx
+
+---
+
+## ⚙️ Installation
+
+```bash
+# Clone the repo
+git clone https://github.com/mahmoud-abdelnasser/fin-cart-repo.git
+cd fin-cart-repo
+
+# Install dependencies
+npm install
+
+# Start server
+npm start
+
+---
+
+## ⚙️ Author
+
+Mahmoud Abdelnasser
+Frontend Engineer | React | TypeScript
+```
